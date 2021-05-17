@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  background-image: url("../images/banner-bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -32,7 +32,16 @@ body {
   min-width: 1200px;
   color: #fff;
 }
-
+@media (min-width: 681px) and (max-width: 1199px){
+.header {
+  background-image: url("../images/banner-bg-tablet.jpg");
+}
+}
+@media (max-width: 680px){
+.header {
+  background-image: url("../images/banner-mobile.jpg");
+}
+}
 .container {
   width: 1170px;
   padding-left: 15px;
@@ -128,17 +137,22 @@ body {
 }
 .trends-list{
   display: flex;
-  
+  justify-content: space-between;
 }
 .trend {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   width: 25%;
-  height: 320px;
+  min-height: 320px;
   background-color: #000000;
   position: relative;
   color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 17px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .trend::before {
   content: "";
@@ -150,8 +164,21 @@ body {
   background-color: #000000;
   opacity: 0.45;
 }
+@media (min-width: 1200px) {
 .trend:nth-child(n+2){
-border-left: 4px solid #ffffff;
+  margin-left: 4px;
+}
+}
+@media (min-width: 681px) and (max-width: 1199px){
+  .trends-list{
+    flex-wrap: wrap;
+  }
+  .trend{
+   max-width: 45%;
+  }
+  .trend:nth-child(even){
+   margin-left: 1%;
+  }
 }
 .block1 {
   background-image: url("../images/trend1.jpg");
@@ -168,13 +195,13 @@ border-left: 4px solid #ffffff;
 .trend-content{
 border: 2px solid #b59f5b;
 max-width: 90%;
-margin-bottom: 17px;
 font-size: 20px;
 line-height: 24px;
 color: #ffffff;
 font-weight: 700;
 z-index: 2;
-  }
+padding: 40px 30px;
+}
 .trend-item-tag {
   margin-right: 15px;
 }
@@ -435,8 +462,7 @@ z-index: 2;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 28px;
-  margin-top: 0;
+  margin: 0;
   position: relative;
 }
 .our_products-title::after {
@@ -458,14 +484,13 @@ z-index: 2;
   justify-content: space-between;
 }
 .our_product{
-  width: 350px;
- 
-  
+  width: 28.8%;
+  padding-bottom: 65px; 
 }
 .our_product-img {
   width: 300px;
   position: relative;
-  left: 30px;
+  left: 20px;
   top: 30px;
 }
 .our_product-content{
@@ -473,13 +498,17 @@ z-index: 2;
   flex-direction: column;
   justify-content: flex-start;
   border: 4px solid  #b59f5b;
-  width: 342px;
-  height: 342px;
   z-index: 2;
   position: relative;
   padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px
+}
+.our_product-title{
+  margin: 0;
+}
+.our_product__description{
+   margin: 0;
 }
 .main_in_product{
   color: #b59f5b; 
@@ -490,6 +519,7 @@ z-index: 2;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-end;
+    margin-bottom: 27px;
 }
 .product__prices{
   display: block;
@@ -519,7 +549,6 @@ z-index: 2;
     font-weight: 700;
     color: #fff;
 }
-
 
 
 
